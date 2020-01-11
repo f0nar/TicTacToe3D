@@ -1,4 +1,4 @@
-#include <field.h>
+#include "field.h"
 
 FieldSet::FieldSet(char x, char o, char n)
 	:maxXY(5), X(x), O(o), NONE(n), totalField(maxXY, std::vector<char>(maxXY, NONE))
