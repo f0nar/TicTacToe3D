@@ -58,3 +58,7 @@ const char &FieldSet::Intercept(const char &top, const char &down)
 {
 	return top == NONE ? down : top;
 }
+
+FieldSetPosition::FieldSetPosition() :
+	field(FieldSet::Mid), x(5/2), y(x)
+{}//TODO 5 to maxXY const
