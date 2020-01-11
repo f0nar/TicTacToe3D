@@ -12,7 +12,7 @@ class FieldSet
 {
 public:
 	enum Field {Top, Mid, Down};
-	FieldSet(char x = 'X', char o = 'O');
+	FieldSet(char x = 'X', char o = 'O', char n = ' ');
 	std::size_t GetMaxXY() const;
 	void Set(FieldSetPosition fpos);
 	const vvc &GetTotalField() const;
@@ -26,13 +26,13 @@ private:
 	void UpdateTotalField(std::size_t x, std::size_t y);
         const char &Intercept(const char &top, const char &down);	
 	char X, O, NONE, currChar;
-}
+};
 
 struct FieldSetPosition
 {
 	FieldSetPosition();
 	FieldSet::Field field;
 	int x, y;
-}
+};
 
 #endif

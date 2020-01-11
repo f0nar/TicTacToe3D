@@ -15,7 +15,7 @@ public:
 	Player *GetCurrPlayer() const ;
 private:
 	std::size_t winLength = 5;
-	void CheckWimSequence(std::size_t x, std::size_t y);
+	void CheckWinSequence(std::size_t x, std::size_t y);
 	void UpdatePlayer();
 	bool gameEnded;
 	bool currPlayer;

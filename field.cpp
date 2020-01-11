@@ -1,7 +1,7 @@
 #include <field.h>
 
-FieldSet::FieldSet(char x = 'X', char o = 'O', char n = ' ')
-	:maxXY(5), X(x), O(o), NONE(n), totalField(maxXY, std::vector<char>(maxXY, NONE)
+FieldSet::FieldSet(char x, char o, char n)
+	:maxXY(5), X(x), O(o), NONE(n), totalField(maxXY, std::vector<char>(maxXY, NONE))
 {
 	fieldSet[Field::Top] = vvc(totalField);
 	fieldSet[Field::Mid] = vvc(totalField);
@@ -10,8 +10,8 @@ FieldSet::FieldSet(char x = 'X', char o = 'O', char n = ' ')
 
 void FieldSet::Set(FieldSetPosition fpos)
 {
-	fieldSet[fpos.Field][fpos.x][fpos.y] = GetCurrentChar();
-	Update(fpos.x, fpos.y);
+	fieldSet[fpos.field][fpos.x][fpos.y] = GetCurrentChar();
+	UpdateTotalField(fpos.x, fpos.y);
 }
 
 const vvc &FieldSet::GetTotalField() const
@@ -38,7 +38,7 @@ void FieldSet::UpdateTotalField(std::size_t x, std::size_t y)
 {
 	char midXYval = fieldSet[Field::Mid][x][y], 
 	     downXYval = fieldSet[Field::Down][x][y], 
-	     topXYval = tableBoxField::Top][x][y],  
+	     topXYval = fieldSet[Field::Top][x][y],  
 	     &totalXYval = totalField[x][y];
 
 	if(midXYval != NONE && downXYval == midXYval)
@@ -60,5 +60,5 @@ const char &FieldSet::Intercept(const char &top, const char &down)
 }
 
 FieldSetPosition::FieldSetPosition() :
-	field(FieldSet::Mid), x(5/2), y(x)
-{}//TODO 5 to maxXY const
+       field(FieldSet::Mid), x(5/2), y(x)
+{}	

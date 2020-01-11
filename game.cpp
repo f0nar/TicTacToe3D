@@ -8,7 +8,7 @@ void Game::Play()
 {
 	auto writePos = GetCurrPlayer()->ChooseFieldPos();
 	fSet.Set(writePos);
-	CheckWinSequnce(writePos.x, writePos.y);
+	CheckWinSequence(writePos.x, writePos.y);
 	UpdatePlayer();
 }  
 
@@ -17,7 +17,7 @@ bool Game::IsEnded()
 	return gameEnded;
 }
 
-void Game::CheckWinSequnce(std::size_t x, std::size_t y)
+void Game::CheckWinSequence(std::size_t x, std::size_t y)
 {
 	auto field = fSet.GetTotalField();
 	if(!gameEnded) gameEnded = CheckRow(x, y, field);
