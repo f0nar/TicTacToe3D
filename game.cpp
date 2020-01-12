@@ -6,7 +6,7 @@ Game::Game(Player *p1, Player *p2) : players(std::make_pair(p1,p2)), gameEnded(f
 
 void Game::Play()
 {
-	auto writePos = GetCurrPlayer()->ChooseFieldPos();
+	auto writePos = GetCurrPlayer()->ChooseFieldPos(fSet);
 	fSet.Set(writePos);
 	CheckWinSequence(writePos.x, writePos.y);
 	UpdatePlayer();
