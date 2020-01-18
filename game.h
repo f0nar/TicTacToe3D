@@ -11,8 +11,9 @@ class Game
 public:
 	Game(Player *p1, Player *p2);
 	void Play();
-	bool IsEnded();
-	Player *GetCurrPlayer() const ;
+	bool IsEnded() const;
+	const Player *GetCurrPlayer() const ;
+	const FieldSet &GetFieldSet() const; 
 private:
 	std::size_t winLength = 5;
 	void CheckWinSequence(std::size_t x, std::size_t y);

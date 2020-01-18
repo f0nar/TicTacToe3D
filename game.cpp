@@ -12,7 +12,7 @@ void Game::Play()
 	UpdatePlayer();
 }  
 
-bool Game::IsEnded()
+bool Game::IsEnded() const 
 {
 	return gameEnded;
 }
@@ -27,7 +27,7 @@ void Game::CheckWinSequence(std::size_t x, std::size_t y)
 }
 
 
-Player *Game::GetCurrPlayer() const
+const Player *Game::GetCurrPlayer() const
 {
     return currPlayer ? players.second : players.first;
 }
@@ -80,4 +80,9 @@ bool Game::CheckMinorDiagonal(const size_t wx, const size_t wy, const vvc &field
         ++strlen, --curx, ++cury);
     return strlen >= winLength ? true : false;
 
+}
+
+const FieldSet &Game::GetFieldSet() const 
+{
+	return fSet; 
 }
