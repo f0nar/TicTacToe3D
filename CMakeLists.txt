@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 
 project(tictactoe3d)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 
 file(GLOB 
 	CPP_SOURCES "*.cpp"
