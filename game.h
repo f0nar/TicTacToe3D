@@ -11,6 +11,7 @@ class Game
 public:
 	Game(Player *p1, Player *p2);
 	void Play();
+	void Restart();
 	bool IsEnded() const;
 	const Player *GetCurrPlayer() const ;
 	const FieldSet &GetFieldSet() const; 

@@ -4,6 +4,12 @@
 Game::Game(Player *p1, Player *p2) : players(std::make_pair(p1,p2)), gameEnded(false), currPlayer(0)
 {}
 
+void Game::Restart()
+{
+	fSet = FieldSet();
+	gameEnded = false;	
+}
+
 void Game::Play()
 {
 	auto writePos = GetCurrPlayer()->ChooseFieldPos(fSet);
