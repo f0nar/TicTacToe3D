@@ -16,7 +16,7 @@ std::string HumanPlayer::GetName() const
 	return name;
 }
 
-FieldSetPosition HumanPlayer::ChooseFieldPos(const FieldSet &fSeht) const
+FieldSetPosition HumanPlayer::ChooseFieldPos(const FieldSet &fSet) const
 {
-	buffer->ReadFieldPos();
+	buffer->ReadFieldPos(fSet);
 }

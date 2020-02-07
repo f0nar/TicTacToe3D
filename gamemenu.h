@@ -4,16 +4,21 @@
 class Game;
 class Buffer;
 class Player;
+class HumanPlayer;
 
 class GameMenu
 {
 public:
-	GameMenu(Game *game, Buffer *buffer);
+	GameMenu(Buffer *buffer);
 	void PlayMatch();
-	void DrawWinner(const Player *winner);
+	void Restart();
+	~GameMenu();
 private:
+	void DrawWinner(const Player *winner);
+	Player *CreatePlayer(char c);
 	Game *game;
 	Buffer *buffer;
+	Player *player1, *player2;
 };
 
 #endif

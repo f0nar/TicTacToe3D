@@ -4,7 +4,7 @@
 #include "game.h"
 
 Menu::Menu(Buffer *buffer) : 
-	buffer(buffer), gameFactory(buffer)
+	buffer(buffer)
 {}
 
 void Menu::Serve()
@@ -14,7 +14,7 @@ void Menu::Serve()
 	bool isSessionEnded = false;
 	while(!isSessionEnded){
 		std::size_t input = buffer->ChooseOneFromList(menuList, menuList.size(), menuMsg);
-		switch(input){
+		switch(input+ 1){
 			case 1: 
 				Play();
 				break;
@@ -40,14 +40,16 @@ void Menu::Play()
 {
 	std::vector<std::string> continueList = { "1.Yes", "2.No" };
 	std::string continueMsg = "Continue";
-	Game *game = gameFactory.CreateGame();
+	
+	GameMenu game(buffer);
 	while(true){
-		GameMenu gamematch(game, buffer);
+		game.PlayMatch();
 		std::size_t input = buffer->ChooseOneFromList(continueList, continueList.size(), continueMsg);
-		if(input == 1)
-		       	game->Restart();
+		if(!input)
+		       	game.Restart();
 		else 
 			return;
 	}	
 }
+
 

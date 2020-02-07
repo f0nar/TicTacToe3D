@@ -21,6 +21,7 @@ private:
 	std::size_t maxXY;
 	std::map<Field, vvc> fieldSet;
 	vvc totalField;
+	std::vector<FieldSetPosition> moveHistory;
 	char GetCurrentChar() const;
 	void UpdateCurrentChar();
 	void UpdateTotalField(std::size_t x, std::size_t y);

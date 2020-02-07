@@ -9,3 +9,5 @@ file(GLOB
 	CPP_HEADERS "*.h")
 
 add_executable(  ${PROJECT_NAME} ${CPP_SOURCES} ${CPP_HEADERS} ) 
+
+target_link_libraries( ${PROJECT_NAME} -lncurses )

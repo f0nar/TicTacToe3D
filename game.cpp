@@ -1,7 +1,12 @@
 #include "game.h"
 #include "player.h"
 
-Game::Game(Player *p1, Player *p2) : players(std::make_pair(p1,p2)), gameEnded(false), currPlayer(0)
+Game::Game(Player *p1, Player *p2) :
+    //players(std::make_pair(p1,p2)),
+    player1(p1), player2(p2),
+    //players(p1, p2),
+    gameEnded(false),
+    currPlayer(0)
 {}
 
 void Game::Restart()
@@ -35,7 +40,8 @@ void Game::CheckWinSequence(std::size_t x, std::size_t y)
 
 const Player *Game::GetCurrPlayer() const
 {
-    return currPlayer ? players.second : players.first;
+    return currPlayer ? player1 : player2;
+    //players.second : players.first;
 }
 
 void Game::UpdatePlayer()

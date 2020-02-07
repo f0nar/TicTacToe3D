@@ -8,10 +8,10 @@ class Buffer;
 class HumanPlayer : public Player
 {
 public:
-	HumanPlayer(std::string name, char sign, Buffer *buffer);
-	FieldSetPosition ChooseFieldPos(const FieldSet &fSet) const;
-	char GetSign() const;
-	std::string GetName() const;
+	HumanPlayer(std::string name, char sign, Buffer *buffer) ;
+	FieldSetPosition ChooseFieldPos(const FieldSet &fSet) const override;
+	char GetSign() const override ;
+	std::string GetName() const override;
 private:
 	std::string name;
 	char sign;

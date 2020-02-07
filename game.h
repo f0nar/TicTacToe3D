@@ -26,6 +26,7 @@ private:
 	bool CheckMajorDiagonal(const size_t x, const size_t y, const vvc &field);
 	bool CheckMinorDiagonal(const size_t x, const size_t y, const vvc &field);
 	std::pair<Player*, Player*> players;
+	Player *player1, *player2;
 	FieldSet fSet;
 };
 

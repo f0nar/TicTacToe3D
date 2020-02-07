@@ -279,8 +279,8 @@ CMakeCache.txt
 CMakeFiles
 cmake_install.cmake
 Makefile
-calculator
-
+tictactoe3d.cbp
+.idea
 
 # qbs builds
 /*-debug/
